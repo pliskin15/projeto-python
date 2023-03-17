@@ -1,0 +1,31 @@
+{% extends 'model.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+{% block conteudo %}
+<body>
+    <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+        <div class="container">
+            <div class="card">
+                <h2>LOGIN</h2>
+
+                <div class="label-float">
+                    <input type="text" id="usuario" placeholder="Usuário" name="username">
+                </div>
+
+                <div class="label-float">
+                    <input type="password" id="senha" placeholder="Senha" name="senha">
+                </div>   
+                
+                <div class="justify-center">
+                    <input type="submit" value="logar">
+                </div>
+
+            </div>
+
+        </div>
+     </form>            
+</body>
+
+{% endblock conteudo %}

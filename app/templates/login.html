@@ -1,0 +1,18 @@
+{% extends 'model.html' %}
+{% load static %}
+
+{% block conteudo %}
+<body>
+ <main>
+    <div class="text">
+        Login efetuado com sucesso.
+    </div>
+    <div class="texto">
+        Clique no botão para acessar o Formulário.
+    </div>    
+    <div class="entrar-button">
+        <button onclick="teste.html"><a href="{% url 'form' %}">Formulário</a></button>
+    </div>
+ </main>        
+</body>
+{% endblock conteudo %}

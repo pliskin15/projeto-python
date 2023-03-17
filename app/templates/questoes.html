@@ -1,0 +1,33 @@
+{% extends 'model.html' %}
+{% load static %}
+
+{% block conteudo %}
+<h1>Formulário de Avaliação do Componente Curricular</h1>
+<div class="top-buffer">
+    <form action="." method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+   
+    {{ form_escola.management_form }}
+   
+    {% for ft in form_escola %}
+    <div class="inlineform">
+    <hr>
+    {{ ft }}
+    </div>        
+    {% endfor %}   
+     
+     <div class="row">
+         <button class='btn btn-primary' type="submit">Salvar</button>
+         <a class="btn btn-danger" href="{% url 'inicio' %}">Cancelar</a>
+     </div>
+     </form>
+    </div>
+    <hr>
+    <hr>
+    Adicionar aqui o componente curricular
+
+{% endblock conteudo %}
+
+{% block scripts %}
+{% endblock scripts %}
